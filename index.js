@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const { Circle, Triangle, Square } = require("./lib/shape");
 const terminalImage = require("terminal-image");
-const { setDefaultResultOrder } = require("dns");
 
 function init() {
   inquirer
@@ -51,15 +50,15 @@ function generateSVG(width, height, text, textColor, bgColor, shape) {
   `
  }
  
-  fs.writeFileSync("./examples/logo.svg", svg);
-
+   fs.writeFileSync("./examples/logo.svg", svg);
+console.log (svg)
   // Read the SVG file and display it in the terminal
-  fs.readFile("./examples/logo.svg", (err, data) => {
-    if (err) throw err;
-    // terminalImage.buffer(data).then((image) => {
-    //   console.log(image);
-    // });
-  });
+  // fs.readFile("./examples/logo.svg", (err, data) => {
+  //   if (err) throw err;
+  //    terminalImage.buffer(data).then((image) => {
+  //    console.log(image);
+  //    });
+  // });
 }
 
 init();
